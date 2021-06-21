@@ -10,8 +10,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select'; 
 import {MatInputModule} from '@angular/material/input'; 
-import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+import {MatAutocompleteModule} from '@angular/material/autocomplete'; 
 import { InputFormComponent } from './input-form/input-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,9 +27,10 @@ import { InputFormComponent } from './input-form/input-form.component';
     MatToolbarModule, 
     MatButtonModule,
     MatSelectModule,
-    NgxMatSelectSearchModule,
+    MatAutocompleteModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

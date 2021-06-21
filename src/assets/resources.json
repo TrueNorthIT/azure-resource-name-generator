@@ -1,155 +1,575 @@
-{
-    "General": {
-        "API management service instance": "apim",
-        "Managed Identity": "id",
-        "Management group": "mg",
-        "Policy definition": "policy",
-        "Resource group": "rg"
+[
+    {
+        "name": "General",
+        "services": [
+            {
+                "name": "API management service instance",
+                "short": "apim"
+            },
+            {
+                "name": "Managed Identity",
+                "short": "id"
+            },
+            {
+                "name": "Management group",
+                "short": "mg"
+            },
+            {
+                "name": "Policy definition",
+                "short": "policy"
+            },
+            {
+                "name": "Resource group",
+                "short": "rg"
+            }
+        ]
     },
-    "Networking": {
-        "Application gateway": "agw",
-        "Application security group (ASG)": "asg",
-        "Bastion": "bas",
-        "CDN profile": "cdnp",
-        "CDN endpoint": "cdne",
-        "Connections": "con",
-        "DNS": "dnsz",
-        "DNS zone": "pdnsz",
-        "Firewall": "afw",
-        "Firewall policy": "afwp",
-        "ExpressRoute circuit": "erc",
-        "Front Door instance": "fd",
-        "Front Door firewall policy": "fdfp",
-        "Load balancer (internal)": "lbi",
-        "Load balancer (external)": "lbe",
-        "Load balancer rule": "rule",
-        "Local network gateway": "lgw",
-        "Network interface (NIC)": "nic",
-        "Network security group (NSG)": "nsg",
-        "Network security group (NSG) security rules": "nsgsr",
-        "Network Watcher": "nw",
-        "Private Link": "pl",
-        "Public IP address": "pip",
-        "Public IP address prefix": "ippre",
-        "Route filter": "rf",
-        "Route table": "rt",
-        "Service endpoint": "se",
-        "Traffic Manager profile": "traf",
-        "User defined route (UDR)": "udr",
-        "Virtual network": "vnet",
-        "Virtual network peering": "peer",
-        "Virtual network subnet": "snet",
-        "Virtual WAN": "vwan",
-        "VPN Gateway": "vpng",
-        "VPN connection": "cn",
-        "VPN site": "st",
-        "Virtual network gateway": "vgw",
-        "Web Application Firewall (WAF) policy": "waf",
-        "Web Application Firewall (WAF) policy rule group": "wafrg"
+    {
+        "name": "Networking",
+        "services": [
+            {
+                "name": "Application gateway",
+                "short": "agw"
+            },
+            {
+                "name": "Application security group (ASG)",
+                "short": "asg"
+            },
+            {
+                "name": "Bastion",
+                "short": "bas"
+            },
+            {
+                "name": "CDN profile",
+                "short": "cdnp"
+            },
+            {
+                "name": "CDN endpoint",
+                "short": "cdne"
+            },
+            {
+                "name": "Connections",
+                "short": "con"
+            },
+            {
+                "name": "DNS",
+                "short": "dnsz"
+            },
+            {
+                "name": "DNS zone",
+                "short": "pdnsz"
+            },
+            {
+                "name": "Firewall",
+                "short": "afw"
+            },
+            {
+                "name": "Firewall policy",
+                "short": "afwp"
+            },
+            {
+                "name": "ExpressRoute circuit",
+                "short": "erc"
+            },
+            {
+                "name": "Front Door instance",
+                "short": "fd"
+            },
+            {
+                "name": "Front Door firewall policy",
+                "short": "fdfp"
+            },
+            {
+                "name": "Load balancer (internal)",
+                "short": "lbi"
+            },
+            {
+                "name": "Load balancer (external)",
+                "short": "lbe"
+            },
+            {
+                "name": "Load balancer rule",
+                "short": "rule"
+            },
+            {
+                "name": "Local network gateway",
+                "short": "lgw"
+            },
+            {
+                "name": "Network interface (NIC)",
+                "short": "nic"
+            },
+            {
+                "name": "Network security group (NSG)",
+                "short": "nsg"
+            },
+            {
+                "name": "Network security group (NSG) security rules",
+                "short": "nsgsr"
+            },
+            {
+                "name": "Network Watcher",
+                "short": "nw"
+            },
+            {
+                "name": "Private Link",
+                "short": "pl"
+            },
+            {
+                "name": "Public IP address",
+                "short": "pip"
+            },
+            {
+                "name": "Public IP address prefix",
+                "short": "ippre"
+            },
+            {
+                "name": "Route filter",
+                "short": "rf"
+            },
+            {
+                "name": "Route table",
+                "short": "rt"
+            },
+            {
+                "name": "Service endpoint",
+                "short": "se"
+            },
+            {
+                "name": "Traffic Manager profile",
+                "short": "traf"
+            },
+            {
+                "name": "User defined route (UDR)",
+                "short": "udr"
+            },
+            {
+                "name": "Virtual network",
+                "short": "vnet"
+            },
+            {
+                "name": "Virtual network peering",
+                "short": "peer"
+            },
+            {
+                "name": "Virtual network subnet",
+                "short": "snet"
+            },
+            {
+                "name": "Virtual WAN",
+                "short": "vwan"
+            },
+            {
+                "name": "VPN Gateway",
+                "short": "vpng"
+            },
+            {
+                "name": "VPN connection",
+                "short": "cn"
+            },
+            {
+                "name": "VPN site",
+                "short": "st"
+            },
+            {
+                "name": "Virtual network gateway",
+                "short": "vgw"
+            },
+            {
+                "name": "Web Application Firewall (WAF) policy",
+                "short": "waf"
+            },
+            {
+                "name": "Web Application Firewall (WAF) policy rule group",
+                "short": "wafrg"
+            }
+        ]
     },
-    "Compute and Web": {
-        "App Service environment": "ase",
-        "App Service plan": "plan",
-        "Availability set": "avail",
-        "Azure Arc enabled server": "arcs",
-        "Azure Arc enabled Kubernetes cluster": "arck",
-        "Cloud service": "cld",
-        "Disk encryption set": "des",
-        "Function app": "func",
-        "Gallery": "gal",
-        "Managed disk (OS)": "osdisk",
-        "Managed disk (data)": "disk",
-        "Notification Hubs": "ntf",
-        "Notification Hubs namespace": "ntfns",
-        "Snapshot": "snap",
-        "Static web app": "stapp",
-        "Virtual machine": "vm",
-        "Virtual machine scale set": "vmss",
-        "VM storage account": "stvm",
-        "Web app": "app"
+    {
+        "name": "Compute and Web",
+        "services": [
+            {
+                "name": "App Service environment",
+                "short": "ase"
+            },
+            {
+                "name": "App Service plan",
+                "short": "plan"
+            },
+            {
+                "name": "Availability set",
+                "short": "avail"
+            },
+            {
+                "name": "Azure Arc enabled server",
+                "short": "arcs"
+            },
+            {
+                "name": "Azure Arc enabled Kubernetes cluster",
+                "short": "arck"
+            },
+            {
+                "name": "Cloud service",
+                "short": "cld"
+            },
+            {
+                "name": "Disk encryption set",
+                "short": "des"
+            },
+            {
+                "name": "Function app",
+                "short": "func"
+            },
+            {
+                "name": "Gallery",
+                "short": "gal"
+            },
+            {
+                "name": "Managed disk (OS)",
+                "short": "osdisk"
+            },
+            {
+                "name": "Managed disk (data)",
+                "short": "disk"
+            },
+            {
+                "name": "Notification Hubs",
+                "short": "ntf"
+            },
+            {
+                "name": "Notification Hubs namespace",
+                "short": "ntfns"
+            },
+            {
+                "name": "Snapshot",
+                "short": "snap"
+            },
+            {
+                "name": "Static web app",
+                "short": "stapp"
+            },
+            {
+                "name": "Virtual machine",
+                "short": "vm"
+            },
+            {
+                "name": "Virtual machine scale set",
+                "short": "vmss"
+            },
+            {
+                "name": "VM storage account",
+                "short": "stvm"
+            },
+            {
+                "name": "Web app",
+                "short": "app"
+            }
+        ]
     },
-    "Containers": {
-        "AKS cluster": "aks",
-        "Container registry": "cr",
-        "Container instance": "ci",
-        "Service Fabric cluster": "sf"
+    {
+        "name": "Containers",
+        "services": [
+            {
+                "name": "AKS cluster",
+                "short": "aks"
+            },
+            {
+                "name": "Container registry",
+                "short": "cr"
+            },
+            {
+                "name": "Container instance",
+                "short": "ci"
+            },
+            {
+                "name": "Service Fabric cluster",
+                "short": "sf"
+            }
+        ]
     },
-    "Databases": {
-        "Azure Cosmos DB database": "cosmos",
-        "Azure Cache for Redis instance": "redis",
-        "Azure SQL Database server": "sql",
-        "Azure SQL database": "sqldb",
-        "Azure Synapse Analytics": "syn",
-        "Azure Synapse Analytics Workspaces": "syn",
-        "Azure Synapse Analytics SQL Dedicated Pool": "syndw",
-        "Azure Synapse Analytics Spark Pool": "synspark",
-        "MySQL database": "mysql",
-        "PostgreSQL database": "psql",
-        "SQL Server Stretch Database": "sqlstrdb",
-        "SQL Managed Instance": "sqlmi"
+    {
+        "name": "Databases",
+        "services": [
+            {
+                "name": "Azure Cosmos DB database",
+                "short": "cosmos"
+            },
+            {
+                "name": "Azure Cache for Redis instance",
+                "short": "redis"
+            },
+            {
+                "name": "Azure SQL Database server",
+                "short": "sql"
+            },
+            {
+                "name": "Azure SQL database",
+                "short": "sqldb"
+            },
+            {
+                "name": "Azure Synapse Analytics",
+                "short": "syn"
+            },
+            {
+                "name": "Azure Synapse Analytics Workspaces",
+                "short": "syn"
+            },
+            {
+                "name": "Azure Synapse Analytics SQL Dedicated Pool",
+                "short": "syndw"
+            },
+            {
+                "name": "Azure Synapse Analytics Spark Pool",
+                "short": "synspark"
+            },
+            {
+                "name": "MySQL database",
+                "short": "mysql"
+            },
+            {
+                "name": "PostgreSQL database",
+                "short": "psql"
+            },
+            {
+                "name": "SQL Server Stretch Database",
+                "short": "sqlstrdb"
+            },
+            {
+                "name": "SQL Managed Instance",
+                "short": "sqlmi"
+            }
+        ]
     },
-    "Storage": {
-        "Storage account": "st",
-        "Azure StorSimple": "ssimp"
+    {
+        "name": "Storage",
+        "services": [
+            {
+                "name": "Storage account",
+                "short": "st"
+            },
+            {
+                "name": "Azure StorSimple",
+                "short": "ssimp"
+            }
+        ]
     },
-    "AI and Machine Learning": {
-        "Azure Cognitive Search": "srch",
-        "Azure Cognitive Services": "cog",
-        "Azure Machine Learning workspace": "mlw"
+    {
+        "name": "AI and Machine Learning",
+        "services": [
+            {
+                "name": "Azure Cognitive Search",
+                "short": "srch"
+            },
+            {
+                "name": "Azure Cognitive Services",
+                "short": "cog"
+            },
+            {
+                "name": "Azure Machine Learning workspace",
+                "short": "mlw"
+            }
+        ]
     },
-    "Analytics and IoT": {
-        "Azure Analysis Services server": "as",
-        "Azure Databricks workspace": "dbw",
-        "Azure Stream Analytics": "asa",
-        "Azure Data Explorer cluster": "dec",
-        "Azure Data Explorer cluster database": "dedb",
-        "Azure Data Factory": "adf",
-        "Data Lake Store account": "dls",
-        "Data Lake Analytics account": "dla",
-        "Event Hubs namespace": "evhns",
-        "Event hub": "evh",
-        "Event Grid domain": "evgd",
-        "Event Grid topic": "evgt",
-        "HDInsight  Hadoop cluster": "hadoop",
-        "HDInsight  HBase cluster": "hbase",
-        "HDInsight  Kafka cluster": "kafka",
-        "HDInsight  Spark cluster": "spark",
-        "HDInsight  Storm cluster": "storm",
-        "HDInsight  ML Services cluster": "mls",
-        "IoT hub": "iot",
-        "Provisioning services": "provs",
-        "Provisioning services certificate": "pcert",
-        "Power BI Embedded": "pbi",
-        "Time Series Insights environment": "tsi"
+    {
+        "name": "Analytics and IoT",
+        "services": [
+            {
+                "name": "Azure Analysis Services server",
+                "short": "as"
+            },
+            {
+                "name": "Azure Databricks workspace",
+                "short": "dbw"
+            },
+            {
+                "name": "Azure Stream Analytics",
+                "short": "asa"
+            },
+            {
+                "name": "Azure Data Explorer cluster",
+                "short": "dec"
+            },
+            {
+                "name": "Azure Data Explorer cluster database",
+                "short": "dedb"
+            },
+            {
+                "name": "Azure Data Factory",
+                "short": "adf"
+            },
+            {
+                "name": "Data Lake Store account",
+                "short": "dls"
+            },
+            {
+                "name": "Data Lake Analytics account",
+                "short": "dla"
+            },
+            {
+                "name": "Event Hubs namespace",
+                "short": "evhns"
+            },
+            {
+                "name": "Event hub",
+                "short": "evh"
+            },
+            {
+                "name": "Event Grid domain",
+                "short": "evgd"
+            },
+            {
+                "name": "Event Grid topic",
+                "short": "evgt"
+            },
+            {
+                "name": "HDInsight  Hadoop cluster",
+                "short": "hadoop"
+            },
+            {
+                "name": "HDInsight  HBase cluster",
+                "short": "hbase"
+            },
+            {
+                "name": "HDInsight  Kafka cluster",
+                "short": "kafka"
+            },
+            {
+                "name": "HDInsight  Spark cluster",
+                "short": "spark"
+            },
+            {
+                "name": "HDInsight  Storm cluster",
+                "short": "storm"
+            },
+            {
+                "name": "HDInsight  ML Services cluster",
+                "short": "mls"
+            },
+            {
+                "name": "IoT hub",
+                "short": "iot"
+            },
+            {
+                "name": "Provisioning services",
+                "short": "provs"
+            },
+            {
+                "name": "Provisioning services certificate",
+                "short": "pcert"
+            },
+            {
+                "name": "Power BI Embedded",
+                "short": "pbi"
+            },
+            {
+                "name": "Time Series Insights environment",
+                "short": "tsi"
+            }
+        ]
     },
-    "Developer tools": {
-        "App Configuration store": "appcs",
-        "Azure Static Web App": "stap",
-        "SignalR": "sigr"
+    {
+        "name": "Developer tools",
+        "services": [
+            {
+                "name": "App Configuration store",
+                "short": "appcs"
+            },
+            {
+                "name": "Azure Static Web App",
+                "short": "stap"
+            },
+            {
+                "name": "SignalR",
+                "short": "sigr"
+            }
+        ]
     },
-    "Integration": {
-        "Integration account": "ia",
-        "Logic apps": "logic",
-        "Service Bus": "sb",
-        "Service Bus queue": "sbq",
-        "Service Bus topic": "sbt"
+    {
+        "name": "Integration",
+        "services": [
+            {
+                "name": "Integration account",
+                "short": "ia"
+            },
+            {
+                "name": "Logic apps",
+                "short": "logic"
+            },
+            {
+                "name": "Service Bus",
+                "short": "sb"
+            },
+            {
+                "name": "Service Bus queue",
+                "short": "sbq"
+            },
+            {
+                "name": "Service Bus topic",
+                "short": "sbt"
+            }
+        ]
     },
-    "Management and governance": {
-        "Automation account": "aa",
-        "Application Insights": "appi",
-        "Azure Monitor action group": "ag",
-        "Azure Purview instance": "pview",
-        "Blueprint": "bp",
-        "Blueprint assignment": "bpa",
-        "Key vault": "kv",
-        "Log Analytics workspace": "log"
+    {
+        "name": "Management and governance",
+        "services": [
+            {
+                "name": "Automation account",
+                "short": "aa"
+            },
+            {
+                "name": "Application Insights",
+                "short": "appi"
+            },
+            {
+                "name": "Azure Monitor action group",
+                "short": "ag"
+            },
+            {
+                "name": "Azure Purview instance",
+                "short": "pview"
+            },
+            {
+                "name": "Blueprint",
+                "short": "bp"
+            },
+            {
+                "name": "Blueprint assignment",
+                "short": "bpa"
+            },
+            {
+                "name": "Key vault",
+                "short": "kv"
+            },
+            {
+                "name": "Log Analytics workspace",
+                "short": "log"
+            }
+        ]
     },
-    "Migration": {
-        "Azure Migrate project": "migr",
-        "Database Migration Service instance": "dms",
-        "Recovery Services vault": "rsv"
+    {
+        "name": "Migration",
+        "services": [
+            {
+                "name": "Azure Migrate project",
+                "short": "migr"
+            },
+            {
+                "name": "Database Migration Service instance",
+                "short": "dms"
+            },
+            {
+                "name": "Recovery Services vault",
+                "short": "rsv"
+            }
+        ]
     },
-    "Deprecated": {
-        "Azure SQL Data Warehouse": "sqldw"
+    {
+        "name": "Deprecated",
+        "services": [
+            {
+                "name": "Azure SQL Data Warehouse",
+                "short": "sqldw"
+            }
+        ]
     }
-}
+]

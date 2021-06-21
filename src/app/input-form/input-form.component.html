@@ -1,15 +1,35 @@
 <form id="form" fxLayout = "row" #form="ngForm">
+
+
+<!-- 
     <mat-form-field appearance="fill">
       <mat-label>Resource</mat-label>
       <mat-select [(ngModel)]="model.resource" name = "resource">
         <mat-option>
-          <ngx-mat-select-search placeholderLabel="Search..."></ngx-mat-select-search>
         </mat-option>
         <mat-option value="pip">
           Public IP Address
         </mat-option>
       </mat-select>
+    </mat-form-field> -->
+
+    <mat-form-field appearance="fill">
+      <mat-label>States Group</mat-label>
+      <input type="text"
+             matInput
+             required
+             [matAutocomplete]="autoGroup"
+             [(ngModel)]="model.resource" name = "resource"
+             >
+        <mat-autocomplete #autoGroup="matAutocomplete">
+          <mat-optgroup *ngFor="let group of shownResources" [label]="group.name">
+            <mat-option *ngFor="let service of group.services" [value]="service.short">
+              {{service.name}}
+            </mat-option>
+        </mat-optgroup>
+      </mat-autocomplete>
     </mat-form-field>
+
 
     <mat-form-field appearance="fill">
       <mat-label>Application Name</mat-label>
@@ -43,9 +63,9 @@
     <mat-form-field appearance="fill">
       <mat-label>Region</mat-label>
       <mat-select [(ngModel)]="model.region" name = "region">
-        <mat-option>
+        <!-- <mat-option>
           <ngx-mat-select-search placeholderLabel="Search..."></ngx-mat-select-search>
-        </mat-option>
+        </mat-option> -->
         <mat-option value="westus">
           West US
         </mat-option>

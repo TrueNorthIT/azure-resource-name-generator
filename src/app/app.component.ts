@@ -13,12 +13,13 @@ export class AppComponent {
 
 
   constructor() {
-    this.nameChange(this.nameFormat)
+    this.nameChange(this.nameFormat);
 
   }
 
   setData(newData: Data) {
     this.resourceData = newData;
+    this.nameChange(this.nameFormat);
   }
 
   nameChange(newName: any){

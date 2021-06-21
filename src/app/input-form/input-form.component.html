@@ -1,20 +1,7 @@
 <form id="form" fxLayout = "row" #form="ngForm">
 
-
-<!-- 
     <mat-form-field appearance="fill">
       <mat-label>Resource</mat-label>
-      <mat-select [(ngModel)]="model.resource" name = "resource">
-        <mat-option>
-        </mat-option>
-        <mat-option value="pip">
-          Public IP Address
-        </mat-option>
-      </mat-select>
-    </mat-form-field> -->
-
-    <mat-form-field appearance="fill">
-      <mat-label>States Group</mat-label>
       <input type="text"
              matInput
              required
@@ -60,16 +47,20 @@
       </mat-select>
     </mat-form-field>
 
+
     <mat-form-field appearance="fill">
       <mat-label>Region</mat-label>
-      <mat-select [(ngModel)]="model.region" name = "region">
-        <!-- <mat-option>
-          <ngx-mat-select-search placeholderLabel="Search..."></ngx-mat-select-search>
-        </mat-option> -->
-        <mat-option value="westus">
-          West US
-        </mat-option>
-      </mat-select>
+      <input type="text"
+             matInput
+             required
+             [matAutocomplete]="autoGroupRegion"
+             [(ngModel)]="model.region" name = "region"
+             >
+        <mat-autocomplete #autoGroupRegion="matAutocomplete">
+          <mat-option *ngFor="let region of shownRegions" [value]="region.code">
+            {{region.name}}
+          </mat-option>
+      </mat-autocomplete>
     </mat-form-field>
 
     <mat-form-field appearance="fill">

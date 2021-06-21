@@ -1,0 +1,258 @@
+[
+    {
+        "name": "East US",
+        "code": "eastus"
+    },
+    {
+        "name": "East US 2",
+        "code": "eastus2"
+    },
+    {
+        "name": "South Central US",
+        "code": "southcentralus"
+    },
+    {
+        "name": "West US 2",
+        "code": "westus2"
+    },
+    {
+        "name": "Australia East",
+        "code": "australiaeast"
+    },
+    {
+        "name": "Southeast Asia",
+        "code": "southeastasia"
+    },
+    {
+        "name": "North Europe",
+        "code": "northeurope"
+    },
+    {
+        "name": "UK South",
+        "code": "uksouth"
+    },
+    {
+        "name": "West Europe",
+        "code": "westeurope"
+    },
+    {
+        "name": "Central US",
+        "code": "centralus"
+    },
+    {
+        "name": "North Central US",
+        "code": "northcentralus"
+    },
+    {
+        "name": "West US",
+        "code": "westus"
+    },
+    {
+        "name": "South Africa North",
+        "code": "southafricanorth"
+    },
+    {
+        "name": "Central India",
+        "code": "centralindia"
+    },
+    {
+        "name": "East Asia",
+        "code": "eastasia"
+    },
+    {
+        "name": "Japan East",
+        "code": "japaneast"
+    },
+    {
+        "name": "Korea Central",
+        "code": "koreacentral"
+    },
+    {
+        "name": "Canada Central",
+        "code": "canadacentral"
+    },
+    {
+        "name": "France Central",
+        "code": "francecentral"
+    },
+    {
+        "name": "Germany West Central",
+        "code": "germanywestcentral"
+    },
+    {
+        "name": "Norway East",
+        "code": "norwayeast"
+    },
+    {
+        "name": "Switzerland North",
+        "code": "switzerlandnorth"
+    },
+    {
+        "name": "UAE North",
+        "code": "uaenorth"
+    },
+    {
+        "name": "Brazil South",
+        "code": "brazilsouth"
+    },
+    {
+        "name": "Central US (Stage)",
+        "code": "centralusstage"
+    },
+    {
+        "name": "East US (Stage)",
+        "code": "eastusstage"
+    },
+    {
+        "name": "East US 2 (Stage)",
+        "code": "eastus2stage"
+    },
+    {
+        "name": "North Central US (Stage)",
+        "code": "northcentralusstage"
+    },
+    {
+        "name": "South Central US (Stage)",
+        "code": "southcentralusstage"
+    },
+    {
+        "name": "West US (Stage)",
+        "code": "westusstage"
+    },
+    {
+        "name": "West US 2 (Stage)",
+        "code": "westus2stage"
+    },
+    {
+        "name": "Asia",
+        "code": "asia"
+    },
+    {
+        "name": "Asia Pacific",
+        "code": "asiapacific"
+    },
+    {
+        "name": "Australia",
+        "code": "australia"
+    },
+    {
+        "name": "Brazil",
+        "code": "brazil"
+    },
+    {
+        "name": "Canada",
+        "code": "canada"
+    },
+    {
+        "name": "Europe",
+        "code": "europe"
+    },
+    {
+        "name": "Global",
+        "code": "global"
+    },
+    {
+        "name": "India",
+        "code": "india"
+    },
+    {
+        "name": "Japan",
+        "code": "japan"
+    },
+    {
+        "name": "United Kingdom",
+        "code": "uk"
+    },
+    {
+        "name": "United States",
+        "code": "unitedstates"
+    },
+    {
+        "name": "East Asia (Stage)",
+        "code": "eastasiastage"
+    },
+    {
+        "name": "Southeast Asia (Stage)",
+        "code": "southeastasiastage"
+    },
+    {
+        "name": "Central US EUAP",
+        "code": "centraluseuap"
+    },
+    {
+        "name": "East US 2 EUAP",
+        "code": "eastus2euap"
+    },
+    {
+        "name": "West Central US",
+        "code": "westcentralus"
+    },
+    {
+        "name": "West US 3",
+        "code": "westus3"
+    },
+    {
+        "name": "South Africa West",
+        "code": "southafricawest"
+    },
+    {
+        "name": "Australia Central",
+        "code": "australiacentral"
+    },
+    {
+        "name": "Australia Central 2",
+        "code": "australiacentral2"
+    },
+    {
+        "name": "Australia Southeast",
+        "code": "australiasoutheast"
+    },
+    {
+        "name": "Japan West",
+        "code": "japanwest"
+    },
+    {
+        "name": "Korea South",
+        "code": "koreasouth"
+    },
+    {
+        "name": "South India",
+        "code": "southindia"
+    },
+    {
+        "name": "West India",
+        "code": "westindia"
+    },
+    {
+        "name": "Canada East",
+        "code": "canadaeast"
+    },
+    {
+        "name": "France South",
+        "code": "francesouth"
+    },
+    {
+        "name": "Germany North",
+        "code": "germanynorth"
+    },
+    {
+        "name": "Norway West",
+        "code": "norwaywest"
+    },
+    {
+        "name": "Switzerland West",
+        "code": "switzerlandwest"
+    },
+    {
+        "name": "UK West",
+        "code": "ukwest"
+    },
+    {
+        "name": "UAE Central",
+        "code": "uaecentral"
+    },
+    {
+        "name": "Brazil Southeast",
+        "code": "brazilsoutheast"
+    }
+]

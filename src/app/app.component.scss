@@ -1,0 +1,37 @@
+#toolbar{
+    height: 64px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+
+#pageContent{
+    margin-top: 64px;
+}
+
+header{
+    padding: 64px;
+    background-color: #3F51B5;
+    color: white;
+}
+
+header h1 {
+    margin-bottom: 0px;
+    font-size: 64px;
+}
+
+header p {
+    margin-top: 0px;
+    font-size: 18px
+}
+
+header button{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+#generator h1 { 
+    font-size: 48px;
+}
+

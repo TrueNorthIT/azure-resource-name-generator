@@ -1,2 +1,23 @@
 
+<mat-toolbar id = "toolbar" color="primary" [class.mat-elevation-z6]="true">
+  <span routerLink='/'>Azure Resource Name Generator</span>
+</mat-toolbar>
+
+<section id = "pageContent">
+  <header fxLayout = "column" fxLayoutAlign = "center center">
+    <h1>Azure Component Name Generator</h1>
+    <p>Automaticly generates resources names in a wide range of formats</p>
+  </header>
+
+  <section id = "generator" fxLayout = "column" fxLayoutAlign = "center center">
+    <app-input-form></app-input-form>
+
+    <!-- <button mat-raised-button>Generate!</button> -->
+
+
+    <h1>pip-sharepoint-prod-westus-001</h1>
+  </section>
+</section>
+
+
 <router-outlet></router-outlet>

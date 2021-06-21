@@ -1,0 +1,61 @@
+<form id="form" fxLayout = "row">
+    <mat-form-field appearance="fill">
+      <mat-label>Resource</mat-label>
+      <mat-select value="pip">
+        <mat-option>
+          <ngx-mat-select-search placeholderLabel="Search..."></ngx-mat-select-search>
+        </mat-option>
+        <mat-option value="pip">
+          Public IP Address
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Application Name</mat-label>
+      <input matInput value="sharepoint">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Enviroment</mat-label>
+      <mat-select value="prod">
+        <mat-option value="none">
+          Don't Include
+        </mat-option>
+        <mat-option value="prod">
+          Production
+        </mat-option>
+        <mat-option value="dev">
+          Development
+        </mat-option>
+        <mat-option value="stage">
+          Staging
+        </mat-option>
+        <mat-option value="qa">
+          Quality Assurance
+        </mat-option>
+        <mat-option value="test">
+          Testing
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Region</mat-label>
+      <mat-select value="westus">
+        <mat-option>
+          <ngx-mat-select-search placeholderLabel="Search..."></ngx-mat-select-search>
+        </mat-option>
+        <mat-option value="westus">
+          West US
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Instace</mat-label>
+      <input matInput value="001">
+    </mat-form-field>
+
+    
+  </form>

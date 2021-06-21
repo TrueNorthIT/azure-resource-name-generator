@@ -13,11 +13,16 @@ import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete'; 
 import { InputFormComponent } from './input-form/input-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormatSelectorComponent } from './format-selector/format-selector.component';
+import {MatGridListModule} from '@angular/material/grid-list'; 
+import {MatCardModule} from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InputFormComponent
+    InputFormComponent,
+    FormatSelectorComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatAutocompleteModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatGridListModule,
+    MatCardModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

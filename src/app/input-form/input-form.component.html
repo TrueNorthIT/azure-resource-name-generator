@@ -4,8 +4,7 @@
       <mat-label>Resource</mat-label>
       <input type="text"
              matInput
-             required
-             [matAutocomplete]="autoGroup"
+              [matAutocomplete]="autoGroup"
              [(ngModel)]="model.resource" name = "resource"
              >
         <mat-autocomplete #autoGroup="matAutocomplete">
@@ -26,7 +25,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Enviroment</mat-label>
       <mat-select value="prod" [(ngModel)]="model.enviroment" name = "enviroment">
-        <mat-option value="none">
+        <mat-option value="">
           Don't Include
         </mat-option>
         <mat-option value="prod">
@@ -52,7 +51,6 @@
       <mat-label>Region</mat-label>
       <input type="text"
              matInput
-             required
              [matAutocomplete]="autoGroupRegion"
              [(ngModel)]="model.region" name = "region"
              >

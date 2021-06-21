@@ -15,9 +15,10 @@
     <!-- <button mat-raised-button>Generate!</button> -->
 
 
-    <h1 *ngIf = "resourceData">{{resourceData.resource}}-{{resourceData.name}}-{{resourceData.enviroment}}-{{resourceData.region}}-{{resourceData.instance}}</h1>
+    <h1 *ngIf = "resourceData">{{name}}</h1>
   </section>
 </section>
 
+<app-format-selector *ngIf = "resourceData" [data]="resourceData" (selectedChange)= "nameChange($event)"></app-format-selector>
 
 <router-outlet></router-outlet>

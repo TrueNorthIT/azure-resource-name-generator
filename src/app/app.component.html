@@ -10,12 +10,12 @@
   </header>
 
   <section id = "generator" fxLayout = "column" fxLayoutAlign = "center center">
-    <app-input-form></app-input-form>
+    <app-input-form (modelEvent) = "setData($event)"></app-input-form>
 
     <!-- <button mat-raised-button>Generate!</button> -->
 
 
-    <h1>pip-sharepoint-prod-westus-001</h1>
+    <h1 *ngIf = "resourceData">{{resourceData.resource}}-{{resourceData.name}}-{{resourceData.enviroment}}-{{resourceData.region}}-{{resourceData.instance}}</h1>
   </section>
 </section>
 

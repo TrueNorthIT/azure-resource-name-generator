@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import {Data} from "./data-model" 
 @Component({
   selector: 'app-input-form',
   templateUrl: './input-form.component.html',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputFormComponent implements OnInit {
 
+  @ViewChild('form') ngForm!: NgForm;
+
+  model = new Data("pip", "sharepoint", "prod", "westus", "001");
+  @Output() modelEvent = new EventEmitter<Data>();
+
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
+  ngAfterViewInit() {
+
+    this.ngForm.valueChanges?.subscribe(form => {
+      this.formChange(form); 
+     
+    })      
+
+  }
+  
+  formChange(form: Data) {
+    this.modelEvent.emit(form);
+  }
 }

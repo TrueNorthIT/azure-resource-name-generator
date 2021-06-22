@@ -1,5 +1,5 @@
-<mat-grid-list id="grid" cols="2" rowHeight="6:1">
-    <mat-grid-tile>
+<mat-grid-list id="grid" [cols]="breakpoint" [rowHeight]="rowHeight" (window:resize)="onResize()">
+    <mat-grid-tile class="tile">
         <mat-card fxLayout="column">
             <mat-card-header fxLayoutAlign="space-between center">
                 <mat-card-title>Resource-Application-Instance-Region-Environment</mat-card-title>
@@ -9,7 +9,7 @@
                     </button>
                 </mat-card-actions>
             </mat-card-header>
-            <b fxFlexAlign="center">{{data.resource}}-{{data.name}}-{{data.instance}}-{{data.region}}-{{data.enviroment}}</b>
+            <b fxFlexAlign="center">{{data.resource}}-{{data.name}}-{{data.instance}}-{{data.region}}-{{data.environment}}</b>
         </mat-card>
     </mat-grid-tile>
 
@@ -23,49 +23,49 @@
                     </button>
                 </mat-card-actions>
             </mat-card-header>
-            <b fxFlexAlign="center">{{data.resource}}-{{data.name}}-{{data.enviroment}}-{{data.region}}-{{data.instance}}</b>
+            <b fxFlexAlign="center">{{data.resource}}-{{data.name}}-{{data.environment}}-{{data.region}}-{{data.instance}}</b>
         </mat-card>
     </mat-grid-tile>
 
     <mat-grid-tile>
         <mat-card fxLayout="column">
             <mat-card-header fxLayoutAlign="space-between center">
-                <mat-card-title>Application-Resource-Region-Enviroment-Instance</mat-card-title>
+                <mat-card-title>Application-Resource-Region-environment-Instance</mat-card-title>
                 <mat-card-actions>
-                    <button color = "green" mat-icon-button aria-label="Example icon button with a heart icon"  (click) = "changeSelection($event, 'Application-Resource-Region-Enviroment-Instance')">
+                    <button color = "green" mat-icon-button aria-label="Example icon button with a heart icon"  (click) = "changeSelection($event, 'Application-Resource-Region-Environment-Instance')">
                         <mat-icon >star</mat-icon>
                     </button>
                 </mat-card-actions>
             </mat-card-header>
-            <b fxFlexAlign="center">{{data.name}}-{{data.resource}}-{{data.region}}-{{data.enviroment}}-{{data.instance}}</b>
+            <b fxFlexAlign="center">{{data.name}}-{{data.resource}}-{{data.region}}-{{data.environment}}-{{data.instance}}</b>
         </mat-card>
     </mat-grid-tile>
 
     <mat-grid-tile>
         <mat-card fxLayout="column">
             <mat-card-header fxLayoutAlign="space-between center">
-                <mat-card-title>Region-Enviroment-Application-Resource-Instance</mat-card-title>
+                <mat-card-title>Region-environment-Application-Resource-Instance</mat-card-title>
                 <mat-card-actions>
-                    <button mat-icon-button aria-label="Example icon button with a heart icon" (click) = "changeSelection($event, 'Region-Enviroment-Application-Resource-Instance')">
+                    <button mat-icon-button aria-label="Example icon button with a heart icon" (click) = "changeSelection($event, 'Region-Environment-Application-Resource-Instance')">
                         <mat-icon>star</mat-icon>
                     </button>
                 </mat-card-actions>
             </mat-card-header>
-            <b fxFlexAlign="center">{{data.region}}-{{data.enviroment}}-{{data.name}}-{{data.resource}}-{{data.instance}}</b>
+            <b fxFlexAlign="center">{{data.region}}-{{data.environment}}-{{data.name}}-{{data.resource}}-{{data.instance}}</b>
         </mat-card>
     </mat-grid-tile>
 
     <mat-grid-tile>
         <mat-card fxLayout="column">
             <mat-card-header fxLayoutAlign="space-between center">
-                <mat-card-title>Resource-Application-Instance-Enviroment-Region</mat-card-title>
+                <mat-card-title>Resource-Application-Instance-environment-Region</mat-card-title>
                 <mat-card-actions>
-                    <button mat-icon-button aria-label="Example icon button with a heart icon"  (click) = "changeSelection($event, 'Resource-Application-Instance-Enviroment-Region')">
+                    <button mat-icon-button aria-label="Example icon button with a heart icon"  (click) = "changeSelection($event, 'Resource-Application-Instance-Environment-Region')">
                         <mat-icon>star</mat-icon>
                     </button>
                 </mat-card-actions>
             </mat-card-header>
-            <b fxFlexAlign="center">{{data.resource}}-{{data.name}}-{{data.instance}}-{{data.enviroment}}-{{data.region}}</b>
+            <b fxFlexAlign="center">{{data.resource}}-{{data.name}}-{{data.instance}}-{{data.environment}}-{{data.region}}</b>
         </mat-card>
     </mat-grid-tile>
 

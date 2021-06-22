@@ -3,6 +3,7 @@
     position: fixed;
     top: 0px;
     left: 0px;
+    z-index: 10000;
 }
 
 #pageContent{
@@ -18,11 +19,14 @@ header{
 header h1 {
     margin-bottom: 0px;
     font-size: 64px;
+    text-align: center;
 }
 
 header p {
     margin-top: 0px;
-    font-size: 18px
+    font-size: 18px;
+    text-align: center;
+
 }
 
 header button{
@@ -33,5 +37,7 @@ header button{
 
 #generator h1 { 
     font-size: 48px;
+    text-align: center;
+    padding: 2rem;
 }
 

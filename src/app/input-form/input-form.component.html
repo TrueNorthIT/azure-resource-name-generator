@@ -1,4 +1,4 @@
-<form id="form" fxLayout = "row" #form="ngForm">
+<form id="form" fxLayout = "row wrap"  fxLayoutAlign = "center" #form="ngForm">
 
     <mat-form-field appearance="fill">
       <mat-label>Resource</mat-label>
@@ -23,8 +23,8 @@
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>Enviroment</mat-label>
-      <mat-select value="prod" [(ngModel)]="model.enviroment" name = "enviroment">
+      <mat-label>environment</mat-label>
+      <mat-select value="prod" [(ngModel)]="model.environment" name = "environment">
         <mat-option value="">
           Don't Include
         </mat-option>

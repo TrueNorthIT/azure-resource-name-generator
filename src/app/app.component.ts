@@ -27,7 +27,7 @@ export class AppComponent {
     this.nameFormat = newName;
     this.name = this.nameFormat.replace("Resource", this.resourceData.resource)
       .replace("Application", this.resourceData.name)
-      .replace("Environment", this.resourceData.enviroment)
+      .replace("Environment", this.resourceData.environment)
       .replace("Region", this.resourceData.region)
       .replace("Instance", this.resourceData.instance);
   }

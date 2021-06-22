@@ -15,7 +15,11 @@
     <!-- <button mat-raised-button>Generate!</button> -->
 
 
-    <h1 *ngIf = "resourceData">{{name}}</h1>
+    <mat-card fxLayout = "flex" fxLayoutAlign="center">
+      <h1 *ngIf = "resourceData">{{name}}</h1>
+      <button mat-button matTooltip="Copy the name to the clipboard!" (click) = "displayMessage('Coppied to Clipboard!')" [cdkCopyToClipboard] ="name"><mat-icon>content_copy</mat-icon></button>
+
+    </mat-card>
   </section>
 </section>
 

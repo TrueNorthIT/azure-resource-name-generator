@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Data } from './input-form/data-model';
 @Component({
   selector: 'app-root',
@@ -12,9 +13,14 @@ export class AppComponent {
   name: string = "";
 
 
-  constructor() {
+  constructor(private _snackBar: MatSnackBar) {
     this.nameChange(this.nameFormat);
   }
+
+  displayMessage(messgae: string) {
+    this._snackBar.open(messgae);
+  }
+
 
   setData(newData: Data) {
     this.resourceData = newData;

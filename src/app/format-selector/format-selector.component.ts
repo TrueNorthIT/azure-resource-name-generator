@@ -1,12 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Data } from '../input-form/data-model';
-
+import {MatSnackBar} from '@angular/material/snack-bar';
 export interface Parameter {
-  name: string;
-}
-
-export interface Vegetable {
   name: string;
 }
 
@@ -31,8 +27,7 @@ export class FormatSelectorComponent implements OnInit {
     { name: "Instance" }
   ];
 
-  constructor() { 
-    console.log(this.customToString());
+  constructor(private _snackBar: MatSnackBar) { 
   }
 
   ngOnInit() {
@@ -47,8 +42,13 @@ export class FormatSelectorComponent implements OnInit {
     return str.substr(0, str.length-1);
   }
 
+  displayMessage(messgae: string) {
+    this._snackBar.open(messgae);
+  }
 
   changeSelection(event: any, newSelection: string) {
+    console.log(event)
+    if (event.target.classList.contains("mat-button-wrapper")) return;
     let card = event.target.closest("mat-card");
     document.getElementsByClassName("mat-accent")[0].classList.remove("mat-accent")
     card.querySelector("button").classList.add("mat-accent");
@@ -65,16 +65,16 @@ export class FormatSelectorComponent implements OnInit {
   drop(event: CdkDragDrop<Parameter[]>) {
     console.log(event)
     moveItemInArray(this.params, event.previousIndex, event.currentIndex);
-    this.customSelection();
+    if (this.selected === "custom")    this.customSelection();
   }
 
   onResize() {
-    if (window.innerWidth <= 400) { this.rowHeight = "2:1"; this.breakpoint = 1 } else
-    if (window.innerWidth <= 450) { this.rowHeight = "2.5:1"; this.breakpoint = 1 } else
-    if (window.innerWidth <= 600) { this.rowHeight = "3:1"; this.breakpoint = 1 } else
-    if (window.innerWidth <= 900) { this.rowHeight = "4:1"; this.breakpoint = 1 } else
-    if (window.innerWidth <= 1200) { this.rowHeight = "6:1"; this.breakpoint = 1 } else
-    if (window.innerWidth <= 1450) { this.rowHeight = "8:1"; this.breakpoint = 1; } else
+    if (window.innerWidth <= 500) { this.rowHeight = "2:1"; this.breakpoint = 1 } else
+    if (window.innerWidth <= 650) { this.rowHeight = "2.5:1"; this.breakpoint = 1 } else
+    if (window.innerWidth <= 750) { this.rowHeight = "3.5:1"; this.breakpoint = 1 } else
+    if (window.innerWidth <= 950) { this.rowHeight = "4:1"; this.breakpoint = 1 } else
+    if (window.innerWidth <= 1200) { this.rowHeight = "5:1"; this.breakpoint = 1 } else
+    if (window.innerWidth <= 1450) { this.rowHeight = "6:1"; this.breakpoint = 1; } else
     if (window.innerWidth >= 2600) { this.rowHeight = "6:1"; this.breakpoint = 2; } else { this.rowHeight = "4:1"; this.breakpoint = 2; }
 
   }

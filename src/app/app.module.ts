@@ -19,7 +19,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-
+import { ClipboardModule } from '@angular/cdk/clipboard';
+import {MatTooltipModule} from '@angular/material/tooltip'; 
+import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,9 +44,14 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MatCardModule,
     MatIconModule,
     MatChipsModule,
-    DragDropModule 
+    DragDropModule,
+    ClipboardModule,
+    MatSnackBarModule,
+    MatTooltipModule
   ],
-  providers: [],
+  providers: [
+    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 1000 } }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

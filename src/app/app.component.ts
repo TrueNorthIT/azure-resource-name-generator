@@ -12,6 +12,10 @@ export class AppComponent {
   nameFormat: string = "Resource-Application-Instance-Region-Environment";
   name: string = "";
 
+  savedNames: string[] = [];
+
+  sideBarOpen = true;
+
 
   constructor(private _snackBar: MatSnackBar) {
     this.nameChange(this.nameFormat);
@@ -21,6 +25,23 @@ export class AppComponent {
     this._snackBar.open(messgae);
   }
 
+  saveName(newName: string){
+    this.savedNames.push(newName);
+  }
+  
+  removeName(event: any){
+    console.log(event)
+    let name = event.target.closest("div").querySelector("p").innerHTML;
+    this.savedNames.splice(this.savedNames.indexOf(name), 1);
+  }
+
+  resetNames() {
+    this.savedNames = [];
+  }
+  
+  toggleSideBar(){ 
+    this.sideBarOpen = !this.sideBarOpen;
+  }
 
   setData(newData: Data) {
     this.resourceData = newData;

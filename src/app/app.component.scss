@@ -40,6 +40,7 @@ header button{
     text-align: center;
     padding: 0px;
     margin: 0px;
+    padding-right: 16px;
 }
 
 mat-card{
@@ -47,6 +48,21 @@ mat-card{
     margin-left: 1rem;
     margin-right: 1rem;
 }
+
+mat-drawer-container{
+    height: 100%;
+}
+
+mat-drawer{
+    width: 50ch;
+}
+
+
+#sidebarTitle{
+    padding: 16px;
+    padding-bottom: 0px;
+}
+
 
 @media screen and (max-width: 1000px) {
     #generator h1 {

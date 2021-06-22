@@ -1,28 +1,66 @@
-
-<mat-toolbar id = "toolbar" color="primary" [class.mat-elevation-z6]="true">
+<mat-toolbar id="toolbar" color="primary" [class.mat-elevation-z6]="true">
+  <button mat-icon-button class="example-icon" (click)="history.toggle(); toggleSideBar()">
+    <mat-icon>menu</mat-icon>
+  </button>
   <span routerLink='/'>Azure Resource Name Generator</span>
 </mat-toolbar>
 
-<section id = "pageContent">
-  <header fxLayout = "column" fxLayoutAlign = "center center">
-    <h1>Azure Resource Name Generator</h1>
-    <p>Automatically generates resources names in a wide range of formats</p>
-  </header>
-
-  <section id = "generator" fxLayout = "column" fxLayoutAlign = "center center">
-    <app-input-form (modelEvent) = "setData($event)"></app-input-form>
-
-    <!-- <button mat-raised-button>Generate!</button> -->
 
 
-    <mat-card fxLayout = "flex" fxLayoutAlign="center">
-      <h1 *ngIf = "resourceData">{{name}}</h1>
-      <button mat-button matTooltip="Copy the name to the clipboard!" (click) = "displayMessage('Coppied to Clipboard!')" [cdkCopyToClipboard] ="name"><mat-icon>content_copy</mat-icon></button>
 
-    </mat-card>
-  </section>
-</section>
+<mat-drawer-container class="example-container">
+  <mat-drawer #history mode="side" opened>
+    <div id = "sidebarTitle" fxLayout = "flex" fxLayoutAlign = "space-between center">
+      <h2>Saved Names</h2>
+      <button mat-button (click) = "resetNames()">Clear All</button>
+    </div>
+    <mat-list>
+      <div *ngFor="let name of savedNames">
+        <mat-list-item fxLayoutAlign="space-between">
+          <p>{{name}}</p>
+          <button mat-icon-button (click)=removeName($event)>
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </div>
 
-<app-format-selector *ngIf = "resourceData" [data]="resourceData" (selectedChange)= "nameChange($event)"></app-format-selector>
 
-<router-outlet></router-outlet>
+    </mat-list>
+
+  </mat-drawer>
+
+
+  <mat-drawer-content>
+    <section id="pageContent">
+      <header fxLayout="column" fxLayoutAlign="center center">
+        <h1>Azure Resource Name Generator</h1>
+        <p>Automatically generates resources names in a wide range of formats</p>
+      </header>
+
+      <section id="generator" fxLayout="column" fxLayoutAlign="center center">
+        <app-input-form (modelEvent)="setData($event)"></app-input-form>
+        <mat-card fxLayout="flex" fxLayoutAlign="center">
+          <h1 *ngIf="resourceData">{{name}}</h1>
+
+          <div fxLayout="column">
+            <button mat-button matTooltip="Save the name to the sidebar" (click)="saveName(name)">
+              <mat-icon>save</mat-icon>
+            </button>
+
+            <button mat-button matTooltip="Copy the name to the clipboard!"
+              (click)="displayMessage('Coppied to Clipboard!')" [cdkCopyToClipboard]="name">
+              <mat-icon>content_copy</mat-icon>
+            </button>
+          </div>
+
+
+        </mat-card>
+      </section>
+    </section>
+
+    <app-format-selector *ngIf="resourceData" [data]="resourceData" [sideBarOpen] ="sideBarOpen" (selectedChange)="nameChange($event)">
+    </app-format-selector>
+
+  </mat-drawer-content>
+</mat-drawer-container>

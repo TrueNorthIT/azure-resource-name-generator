@@ -1,84 +1,24 @@
-<mat-grid-list id="grid" [cols]="breakpoint" [rowHeight]="rowHeight" (window:resize)="onResize()">
-    <mat-grid-tile class="tile">
-        <mat-card fxLayout="column"
-            (click)="changeSelection($event, 'Resource-Application-Instance-Region-Environment')">
-            <mat-card-header fxLayoutAlign="space-between center">
-                <mat-card-title>Resource-Application-Instance-Region-Environment</mat-card-title>
-                <mat-card-actions>
-                    <button color="accent" mat-icon-button aria-label="Selected Indicator">
-                        <mat-icon>star</mat-icon>
-                    </button>
-                </mat-card-actions>
-            </mat-card-header>
-            <b fxFlexAlign="center">{{generateName("Resource-Application-Instance-Region-Environment")}}</b>
-            <button mat-button matTooltip="Copy the name to the clipboard!" fxFlexAlign="end"  (click) = "displayMessage('Coppied to Clipboard!')" [cdkCopyToClipboard] ="generateName('Resource-Application-Instance-Region-Environment')"><mat-icon>content_copy</mat-icon></button>
-        </mat-card>
-    </mat-grid-tile>
+<mat-grid-list name="grid" class="grid" [cols]="breakpoint" [rowHeight]="rowHeight" (window:resize)="onResize()">
 
-    <mat-grid-tile>
+
+    <mat-grid-tile class="tile" *ngFor = "let f of formats; let i = index">
         <mat-card fxLayout="column"
-            (click)="changeSelection($event, 'Resource-Application-Environment-Region-Instance')">
+            (click)="changeSelection($event, f)">
             <mat-card-header fxLayoutAlign="space-between center">
-                <mat-card-title>Resource-Application-Environment-Region-Instance</mat-card-title>
+                <mat-card-title>{{f}}</mat-card-title>
                 <mat-card-actions>
                     <button mat-icon-button aria-label="Selected Indicator">
-                        <mat-icon>star</mat-icon>
+                        <mat-icon *ngIf= "i===0" color="accent">star</mat-icon>
+                        <mat-icon *ngIf= "i != 0" >star</mat-icon>
+
                     </button>
                 </mat-card-actions>
             </mat-card-header>
-            <b fxFlexAlign="center">{{generateName("Resource-Application-Environment-Region-Instance")}}</b>
-            <button mat-button matTooltip="Copy the name to the clipboard!" fxFlexAlign="end"  (click) = "displayMessage('Coppied to Clipboard!')" [cdkCopyToClipboard] ="generateName('Resource-Application-Environment-Region-Instance')"><mat-icon>content_copy</mat-icon></button>
+            <b fxFlexAlign="center">{{generateName(f)}}</b>
+            <button mat-button matTooltip="Copy the name to the clipboard!" fxFlexAlign="end"  (click) = "displayMessage('Coppied to Clipboard!')" [cdkCopyToClipboard] ="generateName(f)"><mat-icon>content_copy</mat-icon></button>
         </mat-card>
     </mat-grid-tile>
 
-    <mat-grid-tile>
-        <mat-card fxLayout="column"
-            (click)="changeSelection($event, 'Application-Resource-Region-Environment-Instance')">
-            <mat-card-header fxLayoutAlign="space-between center">
-                <mat-card-title>Application-Resource-Region-Environment-Instance</mat-card-title>
-                <mat-card-actions>
-                    <button color="green" mat-icon-button aria-label="Selected Indicator"
-                        (click)="changeSelection($event, 'Application-Resource-Region-Environment-Instance')">
-                        <mat-icon>star</mat-icon>
-                    </button>
-                </mat-card-actions>
-            </mat-card-header>
-            <b fxFlexAlign="center">{{generateName("Application-Resource-Region-Environment-Instance")}}</b>
-            <button mat-button matTooltip="Copy the name to the clipboard!" fxFlexAlign="end"  (click) = "displayMessage('Coppied to Clipboard!')" [cdkCopyToClipboard] ="generateName('Application-Resource-Region-Environment-Instance')"><mat-icon>content_copy</mat-icon></button>
-        </mat-card>
-    </mat-grid-tile>
-
-    <mat-grid-tile>
-        <mat-card fxLayout="column"
-            (click)="changeSelection($event, 'Region-Environment-Application-Resource-Instance')">
-            <mat-card-header fxLayoutAlign="space-between center">
-                <mat-card-title>Region-Environment-Application-Resource-Instance</mat-card-title>
-                <mat-card-actions>
-                    <button mat-icon-button aria-label="Selected Indicator">
-                        <mat-icon>star</mat-icon>
-                    </button>
-                </mat-card-actions>
-            </mat-card-header>
-            <b fxFlexAlign="center">{{generateName("Region-Environment-Application-Resource-Instance")}}</b>
-            <button mat-button matTooltip="Copy the name to the clipboard!" fxFlexAlign="end"  (click) = "displayMessage('Coppied to Clipboard!')" [cdkCopyToClipboard] ="generateName('Region-Environment-Application-Resource-Instance')"><mat-icon>content_copy</mat-icon></button>
-        </mat-card>
-    </mat-grid-tile>
-
-    <mat-grid-tile>
-        <mat-card fxLayout="column">
-            <mat-card-header fxLayoutAlign="space-between center"
-                (click)="changeSelection($event, 'Resource-Application-Instance-Environment-Region')">
-                <mat-card-title>Resource-Application-Instance-Environment-Region</mat-card-title>
-                <mat-card-actions>
-                    <button mat-icon-button aria-label="Selected Indicator">
-                        <mat-icon>star</mat-icon>
-                    </button>
-                </mat-card-actions>
-            </mat-card-header>
-            <b fxFlexAlign="center">{{generateName("Resource-Application-Instance-Environment-Region")}}</b>
-            <button mat-button matTooltip="Copy the name to the clipboard!" fxFlexAlign="end"  (click) = "displayMessage('Coppied to Clipboard!')" [cdkCopyToClipboard] ="generateName('Resource-Application-Instance-Environment-Region')"><mat-icon>content_copy</mat-icon></button>
-        </mat-card>
-    </mat-grid-tile>
 
     <mat-grid-tile>
         <mat-card fxLayout="column" (click)="changeSelection($event, 'custom')">

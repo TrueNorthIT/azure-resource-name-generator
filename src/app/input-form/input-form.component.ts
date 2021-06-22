@@ -39,13 +39,6 @@ export class InputFormComponent implements OnInit {
 
   ngAfterViewInit() {
 
-    console.log(this.ngForm)
-
-    this.ngForm.form.get('resource')?.valueChanges.subscribe(value => {
-      console.log(value)
-    })
-  
-
     this.ngForm.valueChanges?.subscribe(form => {
       if (form.resource) this.searchResource(form.resource);
       if (form.region) this.searchRegion(form.region);

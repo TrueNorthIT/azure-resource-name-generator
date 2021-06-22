@@ -14,7 +14,6 @@ export class AppComponent {
 
   constructor() {
     this.nameChange(this.nameFormat);
-
   }
 
   setData(newData: Data) {
@@ -23,7 +22,6 @@ export class AppComponent {
   }
 
   nameChange(newName: any){
-
     this.nameFormat = newName;
     this.name = this.nameFormat.replace("Resource", this.resourceData.resource)
       .replace("Application", this.resourceData.name)

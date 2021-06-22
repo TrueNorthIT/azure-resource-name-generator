@@ -1,5 +1,14 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Data } from '../input-form/data-model';
+
+export interface Parameter {
+  name: string;
+}
+
+export interface Vegetable {
+  name: string;
+}
 
 @Component({
   selector: 'app-format-selector',
@@ -14,6 +23,31 @@ export class FormatSelectorComponent implements OnInit {
   @Output() selectedChange = new EventEmitter<string>();
   @Input() data!: Data;
 
+  params: Parameter[] = [
+    { name: "Resource" },
+    { name: "Application" },
+    { name: "Environment" },
+    { name: "Region" },
+    { name: "Instance" }
+  ];
+
+  constructor() { 
+    console.log(this.customToString());
+  }
+
+  ngOnInit() {
+    this.onResize();
+  }
+
+  customToString(): string {
+    let str = ""
+    this.params.forEach(p => {
+      str += p.name + "-";
+    });
+    return str.substr(0, str.length-1);
+  }
+
+
   changeSelection(event: any, newSelection: string) {
     document.getElementsByClassName("mat-accent")[0].classList.remove("mat-accent")
     event.target.classList.add("mat-accent");
@@ -21,10 +55,10 @@ export class FormatSelectorComponent implements OnInit {
     this.selectedChange.emit(this.selected);
   }
 
-  constructor() { }
 
-  ngOnInit() {
-    this.onResize();
+
+  drop(event: CdkDragDrop<Parameter[]>) {
+    moveItemInArray(this.params, event.previousIndex, event.currentIndex);
   }
 
   onResize() {
@@ -37,8 +71,8 @@ export class FormatSelectorComponent implements OnInit {
     if (window.innerWidth >= 2600) { this.rowHeight = "6:1"; this.breakpoint = 2; } else { this.rowHeight = "4:1"; this.breakpoint = 2; }
 
   }
-  
-  generateName(nameFormat: string) : string{
+
+  generateName(nameFormat: string): string {
     let name = nameFormat;
     name = nameFormat.replace("Resource", this.data.resource)
       .replace("Application", this.data.name)
@@ -46,7 +80,7 @@ export class FormatSelectorComponent implements OnInit {
       .replace("Region", this.data.region)
       .replace("Instance", this.data.instance)
       .replace("--", "-");
-    if (name.endsWith("-")) name = name.substr(0, name.length-1);
+    if (name.endsWith("-")) name = name.substr(0, name.length - 1);
     return name
   }
 

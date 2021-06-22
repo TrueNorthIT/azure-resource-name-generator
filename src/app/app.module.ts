@@ -17,6 +17,8 @@ import { FormatSelectorComponent } from './format-selector/format-selector.compo
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { MatChipsModule } from '@angular/material/chips';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { MatIconModule } from '@angular/material/icon';
     ReactiveFormsModule,
     MatGridListModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    MatChipsModule,
+    DragDropModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

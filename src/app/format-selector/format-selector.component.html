@@ -4,7 +4,8 @@
             <mat-card-header fxLayoutAlign="space-between center">
                 <mat-card-title>Resource-Application-Instance-Region-Environment</mat-card-title>
                 <mat-card-actions>
-                    <button color = "accent" mat-icon-button aria-label="Example icon button with a heart icon" (click) = "changeSelection($event, 'Resource-Application-Instance-Region-Environment')">
+                    <button color="accent" mat-icon-button aria-label="Example icon button with a heart icon"
+                        (click)="changeSelection($event, 'Resource-Application-Instance-Region-Environment')">
                         <mat-icon>star</mat-icon>
                     </button>
                 </mat-card-actions>
@@ -18,7 +19,8 @@
             <mat-card-header fxLayoutAlign="space-between center">
                 <mat-card-title>Resource-Application-Environment-Region-Instance</mat-card-title>
                 <mat-card-actions>
-                    <button mat-icon-button aria-label="Example icon button with a heart icon" (click) = "changeSelection($event, 'Resource-Application-Environment-Region-Instance')">
+                    <button mat-icon-button aria-label="Example icon button with a heart icon"
+                        (click)="changeSelection($event, 'Resource-Application-Environment-Region-Instance')">
                         <mat-icon>star</mat-icon>
                     </button>
                 </mat-card-actions>
@@ -32,8 +34,9 @@
             <mat-card-header fxLayoutAlign="space-between center">
                 <mat-card-title>Application-Resource-Region-Environment-Instance</mat-card-title>
                 <mat-card-actions>
-                    <button color = "green" mat-icon-button aria-label="Example icon button with a heart icon"  (click) = "changeSelection($event, 'Application-Resource-Region-Environment-Instance')">
-                        <mat-icon >star</mat-icon>
+                    <button color="green" mat-icon-button aria-label="Example icon button with a heart icon"
+                        (click)="changeSelection($event, 'Application-Resource-Region-Environment-Instance')">
+                        <mat-icon>star</mat-icon>
                     </button>
                 </mat-card-actions>
             </mat-card-header>
@@ -46,7 +49,8 @@
             <mat-card-header fxLayoutAlign="space-between center">
                 <mat-card-title>Region-Environment-Application-Resource-Instance</mat-card-title>
                 <mat-card-actions>
-                    <button mat-icon-button aria-label="Example icon button with a heart icon" (click) = "changeSelection($event, 'Region-Environment-Application-Resource-Instance')">
+                    <button mat-icon-button aria-label="Example icon button with a heart icon"
+                        (click)="changeSelection($event, 'Region-Environment-Application-Resource-Instance')">
                         <mat-icon>star</mat-icon>
                     </button>
                 </mat-card-actions>
@@ -56,11 +60,12 @@
     </mat-grid-tile>
 
     <mat-grid-tile>
-        <mat-card fxLayout="column">
+        <mat-card fxLayout="column" >
             <mat-card-header fxLayoutAlign="space-between center">
                 <mat-card-title>Resource-Application-Instance-Environment-Region</mat-card-title>
                 <mat-card-actions>
-                    <button mat-icon-button aria-label="Example icon button with a heart icon"  (click) = "changeSelection($event, 'Resource-Application-Instance-Environment-Region')">
+                    <button mat-icon-button aria-label="Example icon button with a heart icon"
+                        (click)="changeSelection($event, 'Resource-Application-Instance-Environment-Region')">
                         <mat-icon>star</mat-icon>
                     </button>
                 </mat-card-actions>
@@ -72,14 +77,24 @@
     <mat-grid-tile>
         <mat-card fxLayout="column">
             <mat-card-header fxLayoutAlign="space-between center">
-                <mat-card-title>Custom</mat-card-title>
+                <mat-card-title>
+                    <span>Custom -</span>
+                    <mat-chip-list class="example-chip" cdkDropList cdkDropListOrientation="horizontal"
+                    (cdkDropListDropped)="drop($event)">
+                    <mat-chip class="example-box" cdkDrag *ngFor="let p of params">
+                        {{p.name}}
+                    </mat-chip>
+                    
+                </mat-chip-list>
+
+                </mat-card-title>
                 <mat-card-actions>
                     <button mat-icon-button aria-label="Example icon button with a heart icon">
                         <mat-icon>star</mat-icon>
                     </button>
                 </mat-card-actions>
             </mat-card-header>
-            <b fxFlexAlign="center">Coming Soon!</b>
+            <b fxFlexAlign="center">{{generateName(customToString())}}</b>
         </mat-card>
     </mat-grid-tile>
 

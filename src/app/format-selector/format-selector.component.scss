@@ -1,26 +1,37 @@
-#grid{
-    margin-left: 20vw;
-    margin-right: 20vw;
-    padding-bottom: 0px !important;
+#grid {
+  margin-left: 20vw;
+  margin-right: 20vw;
+  padding-bottom: 0px !important;
 }
 
 @media screen and (max-width: 1900px) {
-    #grid{
-        margin-left: 15vw;
-        margin-right: 15vw;
-    }
+  #grid {
+    margin-left: 15vw;
+    margin-right: 15vw;
+  }
 }
 
 @media screen and (max-width: 1700px) {
-    #grid{
-        margin-left: 5vw;
-        margin-right: 5vw;
-    }
+  #grid {
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
 }
 
-mat-card{
-    width: 100%;
-    // padding: 0px;
-    margin: 16px;
-   
+mat-card {
+  width: 100%;
+  // padding: 0px;
+  margin: 16px;
+}
+
+.example-box.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-chip .cdk-drop-list-dragging {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+mat-chip-list{
+    display: inline-block;
+    margin-left: 0.5rem;
 }

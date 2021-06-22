@@ -38,6 +38,18 @@ header button{
 #generator h1 { 
     font-size: 48px;
     text-align: center;
-    padding: 2rem;
+    padding: 0px;
+    margin: 0px;
 }
 
+mat-card{
+    margin-bottom: 64px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+@media screen and (max-width: 1000px) {
+    #generator h1 {
+        font-size: 32px;
+    }
+}

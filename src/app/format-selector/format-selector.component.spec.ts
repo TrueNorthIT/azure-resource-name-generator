@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormatSelectorComponent } from './format-selector.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 describe('FormatSelectorComponent', () => {
   let fixture: ComponentFixture<FormatSelectorComponent>;
@@ -23,7 +24,8 @@ describe('FormatSelectorComponent', () => {
         MatButtonModule,
         MatIconModule,
         MatCardModule,
-        MatGridListModule
+        MatGridListModule,
+        MatSnackBarModule
       ],
       declarations: [FormatSelectorComponent]
     }).compileComponents();
@@ -36,7 +38,7 @@ describe('FormatSelectorComponent', () => {
 
   it('should load all button harnesses', async () => {
     const buttons = await loader.getAllHarnesses(MatButtonHarness);
-    expect(buttons.length).toBe(6);
+    expect(buttons.length).toBe(12);
   });
 
   it('should create', () => {
@@ -44,17 +46,17 @@ describe('FormatSelectorComponent', () => {
   });
 
   it("pressing a button should emmit an event", async () => {
-    const buttons = await loader.getAllHarnesses(MatButtonHarness);
+    const button = await loader.getHarness(MatButtonHarness);
     spyOn(fixture.componentInstance.selectedChange, "emit");
-    await buttons[1].click();
+    await button.click();
     expect(fixture.componentInstance.selectedChange.emit).toHaveBeenCalled()
   });
 
   it("pressing a button should change its apperance", async () => {
-    const buttons = await loader.getAllHarnesses(MatButtonHarness);
+    const button = await loader.getHarness(MatButtonHarness);
     spyOn(fixture.componentInstance.selectedChange, "emit");
-    await buttons[1].click();
-    const hasColour = await(await (buttons[1].host())).hasClass("mat-accent");
+    await button.click();
+    const hasColour = await(await (button.host())).hasClass("mat-accent");
     expect(hasColour).toBe(true);
   });
 });

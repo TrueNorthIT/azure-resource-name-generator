@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Data } from './input-form/data-model';
 @Component({
   selector: 'app-root',
@@ -12,9 +13,14 @@ export class AppComponent {
   name: string = "";
 
 
-  constructor() {
+  constructor(private _snackBar: MatSnackBar) {
     this.nameChange(this.nameFormat);
   }
+
+  displayMessage(messgae: string) {
+    this._snackBar.open(messgae);
+  }
+
 
   setData(newData: Data) {
     this.resourceData = newData;
@@ -27,6 +33,8 @@ export class AppComponent {
       .replace("Application", this.resourceData.name)
       .replace("Environment", this.resourceData.environment)
       .replace("Region", this.resourceData.region)
-      .replace("Instance", this.resourceData.instance);
+      .replace("Instance", this.resourceData.instance)
+      .replace("--", "-");
+    if (this.name.endsWith("-")) this.name = this.name.substr(0, this.name.length-1);
   }
 }

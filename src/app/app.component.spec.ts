@@ -40,7 +40,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('header p').textContent).toContain('Automaticly generates resources names in a wide range of formats');
+    expect(compiled.querySelector('header p').textContent).toContain('Automatically generates resources names in a wide range of formats');
   });
 
   it('should correctly render the supplied data', () => {

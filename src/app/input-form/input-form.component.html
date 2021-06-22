@@ -7,7 +7,7 @@
               [matAutocomplete]="autoGroup"
              [(ngModel)]="model.resource" name = "resource"
              >
-        <mat-autocomplete #autoGroup="matAutocomplete">
+        <mat-autocomplete #autoGroup="matAutocomplete" [panelWidth]="430">
           <mat-optgroup *ngFor="let group of shownResources" [label]="group.name">
             <mat-option *ngFor="let service of group.services" [value]="service.short">
               {{service.name}}
@@ -54,7 +54,7 @@
              [matAutocomplete]="autoGroupRegion"
              [(ngModel)]="model.region" name = "region"
              >
-        <mat-autocomplete #autoGroupRegion="matAutocomplete">
+        <mat-autocomplete #autoGroupRegion="matAutocomplete"  [panelWidth]="230">
           <mat-option *ngFor="let region of shownRegions" [value]="region.code">
             {{region.name}}
           </mat-option>

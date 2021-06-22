@@ -33,9 +33,22 @@ export class FormatSelectorComponent implements OnInit {
     if (window.innerWidth <= 600) { this.rowHeight = "3:1"; this.breakpoint = 1 } else
     if (window.innerWidth <= 900) { this.rowHeight = "4:1"; this.breakpoint = 1 } else
     if (window.innerWidth <= 1200) { this.rowHeight = "6:1"; this.breakpoint = 1 } else
-    if (window.innerWidth <= 1450) { this.rowHeight = "8:1"; this.breakpoint = 1;} else
-    if (window.innerWidth >= 2600) { this.rowHeight = "6:1"; this.breakpoint = 2;} else
-    {this.rowHeight = "4:1"; this.breakpoint = 2;}
+    if (window.innerWidth <= 1450) { this.rowHeight = "8:1"; this.breakpoint = 1; } else
+    if (window.innerWidth >= 2600) { this.rowHeight = "6:1"; this.breakpoint = 2; } else { this.rowHeight = "4:1"; this.breakpoint = 2; }
+
+  }
   
-}
+  generateName(nameFormat: string) : string{
+    let name = nameFormat;
+    name = nameFormat.replace("Resource", this.data.resource)
+      .replace("Application", this.data.name)
+      .replace("Environment", this.data.environment)
+      .replace("Region", this.data.region)
+      .replace("Instance", this.data.instance)
+      .replace("--", "-");
+    if (name.endsWith("-")) name = name.substr(0, name.length-1);
+    return name
+  }
+
+
 }

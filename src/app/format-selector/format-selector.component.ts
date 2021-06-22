@@ -49,16 +49,23 @@ export class FormatSelectorComponent implements OnInit {
 
 
   changeSelection(event: any, newSelection: string) {
+    let card = event.target.closest("mat-card");
     document.getElementsByClassName("mat-accent")[0].classList.remove("mat-accent")
-    event.target.classList.add("mat-accent");
+    card.querySelector("button").classList.add("mat-accent");
+    if (newSelection === "custom") return this.customSelection();
     this.selected = newSelection;
     this.selectedChange.emit(this.selected);
   }
-
+  
+  customSelection() {
+    this.selectedChange.emit(this.customToString());
+  }
 
 
   drop(event: CdkDragDrop<Parameter[]>) {
+    console.log(event)
     moveItemInArray(this.params, event.previousIndex, event.currentIndex);
+    this.customSelection();
   }
 
   onResize() {

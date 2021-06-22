@@ -1,20 +1,35 @@
-#grid {
-  margin-left: 20vw;
-  margin-right: 20vw;
+.grid {
+  margin-left: 20%;
+  margin-right: 20%;
   padding-bottom: 0px !important;
 }
 
+.grid-sidebar{
+  margin-left: 15%;
+  margin-right: 15%;
+  padding-bottom: 0px !important;
+}
+
+
 @media screen and (max-width: 1900px) {
-  #grid {
-    margin-left: 15vw;
-    margin-right: 15vw;
+  .grid {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+  .grid-sidebar{
+    margin-left: 10%;
+    margin-right: 10%;
   }
 }
 
 @media screen and (max-width: 1700px) {
-  #grid {
-    margin-left: 5vw;
-    margin-right: 5vw;
+  .grid {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .grid-sidebar{
+    margin-left: 2%;
+    margin-right: 2%;
   }
 }
 

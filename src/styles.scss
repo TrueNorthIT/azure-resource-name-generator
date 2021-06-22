@@ -1,9 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-html, body { height: 100%; }
-body {height: calc(100% - 64px);}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 .mat-simple-snackbar span {
-    margin: auto;
-    text-align: center;
-  }
+  margin: auto;
+  text-align: center;
+}
+
+
+.mat-drawer-inner-container {
+  height: calc(100% - 64px) !important;
+  margin-top: 64px !important;
+}
+
+.mat-list-item-content{
+  justify-content: space-between;
+  width: 100%;
+}

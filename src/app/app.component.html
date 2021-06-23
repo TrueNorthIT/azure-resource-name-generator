@@ -10,20 +10,29 @@
 
 <mat-drawer-container class="example-container">
   <mat-drawer #history mode="side" opened>
-    <div id = "sidebarTitle" fxLayout = "flex" fxLayoutAlign = "space-between center">
+    <div id="sidebarTitle" fxLayout="flex" fxLayoutAlign="space-between center">
       <h2>Saved Names</h2>
-      <button mat-button (click) = "resetNames()">Clear All</button>
+      <div>
+        <button mat-button (click)="copyNames()">Copy All</button>
+        <button mat-button (click)="resetNames()">Clear All</button>
+      </div>
     </div>
     <mat-list>
-      <div *ngFor="let name of savedNames">
+      <aside *ngFor="let name of savedNames; let i = index">
         <mat-list-item fxLayoutAlign="space-between">
           <p>{{name}}</p>
-          <button mat-icon-button (click)=removeName($event)>
-            <mat-icon>delete</mat-icon>
-          </button>
+          <div>
+            <button mat-icon-button (click)=copyName(i)>
+              <mat-icon>content_copy</mat-icon>
+            </button>
+            <button mat-icon-button (click)=removeName($event)>
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
         </mat-list-item>
         <mat-divider></mat-divider>
-      </div>
+      </aside>
+
 
 
     </mat-list>
@@ -59,7 +68,8 @@
       </section>
     </section>
 
-    <app-format-selector *ngIf="resourceData" [data]="resourceData" [sideBarOpen] ="sideBarOpen" (selectedChange)="nameChange($event)">
+    <app-format-selector *ngIf="resourceData" [data]="resourceData" [sideBarOpen]="sideBarOpen"
+      (selectedChange)="nameChange($event)">
     </app-format-selector>
 
   </mat-drawer-content>

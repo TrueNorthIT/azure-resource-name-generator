@@ -75,6 +75,7 @@ export class FormatSelectorComponent implements OnInit {
   }
 
   onResize() {
+    
     if (window.innerWidth <= 500) { this.rowHeight = "2:1"; this.breakpoint = 1 } else
     if (window.innerWidth <= 650) { this.rowHeight = "2.5:1"; this.breakpoint = 1 } else
     if (window.innerWidth <= 750) { this.rowHeight = "3.5:1"; this.breakpoint = 1 } else
@@ -109,6 +110,7 @@ export class FormatSelectorComponent implements OnInit {
     const grid = document.getElementsByName("grid")[0];
 
     if (this.sideBarOpen) {
+
       grid.classList.remove("grid");
       grid.classList.add("grid-sidebar");
     } else {

@@ -26,7 +26,6 @@ export class AppComponent {
 
   sideBarOpen = true;
 
-
   constructor(private _snackBar: MatSnackBar, private clipboard: Clipboard, public dialog: MatDialog) {
     this.nameChange(this.nameFormat);
     let localNames = localStorage.getItem("savedNames");

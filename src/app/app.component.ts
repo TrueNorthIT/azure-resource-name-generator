@@ -1,6 +1,16 @@
+import { Clipboard } from '@angular/cdk/clipboard';
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Data } from './input-form/data-model';
+import {MatDialog} from '@angular/material/dialog';
+import { Observable } from 'rxjs';
+
+@Component({
+  selector: 'dialog-elements-example-dialog',
+  templateUrl: './dialogs/reset-names-dialog.html',
+})
+export class ResetDialog { }
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -17,8 +27,16 @@ export class AppComponent {
   sideBarOpen = true;
 
 
-  constructor(private _snackBar: MatSnackBar) {
+  constructor(private _snackBar: MatSnackBar, private clipboard: Clipboard, public dialog: MatDialog) {
     this.nameChange(this.nameFormat);
+    let localNames = localStorage.getItem("savedNames");
+    if (localNames){
+      this.savedNames = JSON.parse(localNames);
+    }
+  }
+
+  openDialog(): Observable<any> {
+    return this.dialog.open(ResetDialog).afterClosed()
   }
 
   displayMessage(messgae: string) {
@@ -27,16 +45,33 @@ export class AppComponent {
 
   saveName(newName: string){
     this.savedNames.push(newName);
+    const jsonData = JSON.stringify(this.savedNames);
+    localStorage.setItem('savedNames', jsonData);
   }
   
   removeName(event: any){
-    console.log(event)
-    let name = event.target.closest("div").querySelector("p").innerHTML;
+    let name = event.target.closest("aside").querySelector("p").innerHTML;
     this.savedNames.splice(this.savedNames.indexOf(name), 1);
   }
 
+  copyName(index: number){
+    this.clipboard.copy(this.savedNames[index]);
+    this.displayMessage("Coppied to clipboard!");
+  }
+
+  copyNames(){
+    this.clipboard.copy(this.savedNames.join("\n"));
+    this.displayMessage("Coppied all to clipboard!");
+  }
   resetNames() {
-    this.savedNames = [];
+    this.openDialog().subscribe(response => {
+      console.log(response)
+      if (response === "true"){ 
+        this.savedNames = [];
+        localStorage.removeItem("savedNames");
+
+       }
+    });
   }
   
   toggleSideBar(){ 

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Data } from '../input-form/data-model';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 export interface Parameter {
   name: string;
 }
@@ -36,7 +36,7 @@ export class FormatSelectorComponent implements OnInit {
     "Resource-Application-Instance-Environment-Region"
   ]
 
-  constructor(private _snackBar: MatSnackBar) {  }
+  constructor(private _snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.onResize();
@@ -47,7 +47,7 @@ export class FormatSelectorComponent implements OnInit {
     this.params.forEach(p => {
       str += p.name + "-";
     });
-    return str.substr(0, str.length-1);
+    return str.substr(0, str.length - 1);
   }
 
   displayMessage(messgae: string) {
@@ -55,7 +55,6 @@ export class FormatSelectorComponent implements OnInit {
   }
 
   changeSelection(event: any, newSelection: string) {
-    console.log(event)
     if (event.target.classList.contains("mat-button-wrapper")) return;
     let card = event.target.closest("mat-card");
     document.getElementsByClassName("mat-accent")[0].classList.remove("mat-accent")
@@ -64,20 +63,18 @@ export class FormatSelectorComponent implements OnInit {
     this.selected = newSelection;
     this.selectedChange.emit(this.selected);
   }
-  
+
   customSelection() {
     this.selectedChange.emit(this.customToString());
   }
 
 
   drop(event: CdkDragDrop<Parameter[]>) {
-    console.log(event)
     moveItemInArray(this.params, event.previousIndex, event.currentIndex);
-    if (this.selected === "custom")    this.customSelection();
+    if (this.selected === "custom") this.customSelection();
   }
 
   onResize() {
-    
     if (window.innerWidth <= 500) { this.rowHeight = "2:1"; this.breakpoint = 1 } else
     if (window.innerWidth <= 650) { this.rowHeight = "2.5:1"; this.breakpoint = 1 } else
     if (window.innerWidth <= 750) { this.rowHeight = "3.5:1"; this.breakpoint = 1 } else
@@ -108,11 +105,10 @@ export class FormatSelectorComponent implements OnInit {
     return name
   }
 
-  ngOnChanges(){
-    console.log(this.sideBarOpen)
+  ngOnChanges() {
     const grid = document.getElementsByName("grid")[0];
 
-    if (this.sideBarOpen){
+    if (this.sideBarOpen) {
       grid.classList.remove("grid");
       grid.classList.add("grid-sidebar");
     } else {

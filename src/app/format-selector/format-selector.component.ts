@@ -101,6 +101,8 @@ export class FormatSelectorComponent implements OnInit {
       .replace("Environment", this.data.environment)
       .replace("Region", this.data.region)
       .replace("Instance", this.data.instance)
+      .replace("--", "-")
+      .replace("--", "-")
       .replace("--", "-");
     if (name.endsWith("-")) name = name.substr(0, name.length - 1);
     return name

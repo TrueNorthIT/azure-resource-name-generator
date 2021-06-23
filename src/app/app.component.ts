@@ -89,6 +89,8 @@ export class AppComponent {
       .replace("Environment", this.resourceData.environment)
       .replace("Region", this.resourceData.region)
       .replace("Instance", this.resourceData.instance)
+      .replace("--", "-")
+      .replace("--", "-")
       .replace("--", "-");
     if (this.name.endsWith("-")) this.name = this.name.substr(0, this.name.length-1);
   }

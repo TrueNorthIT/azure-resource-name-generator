@@ -1,74 +1,53 @@
-<form id="form" fxLayout = "row wrap"  fxLayoutAlign = "center" #form="ngForm">
+<form id="form" fxLayout="row wrap" fxLayoutAlign="center" #form="ngForm">
 
-    <mat-form-field appearance="fill">
-      <mat-label>Resource</mat-label>
-      <input type="text"
-             matInput
-              [matAutocomplete]="autoGroup"
-             [(ngModel)]="model.resource" name = "resource"
-             >
-        <mat-autocomplete #autoGroup="matAutocomplete" [panelWidth]="430">
-          <mat-optgroup *ngFor="let group of shownResources" [label]="group.name">
-            <mat-option *ngFor="let service of group.services" [value]="service.short">
-              {{service.name}}
-            </mat-option>
-        </mat-optgroup>
-      </mat-autocomplete>
-    </mat-form-field>
-
-
-    <mat-form-field appearance="fill">
-      <mat-label>Application Name</mat-label>
-      <input matInput [(ngModel)]="model.name" name = "name">
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-      <mat-label>environment</mat-label>
-      <mat-select value="prod" [(ngModel)]="model.environment" name = "environment">
-        <mat-option value="">
-          Don't Include
+  <mat-form-field appearance="fill">
+    <mat-label>Resource</mat-label>
+    <input type="text" matInput [matAutocomplete]="autoGroup" [(ngModel)]="model.resource" name="resource">
+    <mat-autocomplete #autoGroup="matAutocomplete" [panelWidth]="430">
+      <mat-optgroup *ngFor="let group of shownResources" [label]="group.name">
+        <mat-option *ngFor="let service of group.services" [value]="service.short">
+          {{service.name}}
         </mat-option>
-        <mat-option value="prod">
-          Production
-        </mat-option>
-        <mat-option value="preprod">
-          Pre-Production
-        </mat-option>
-        <mat-option value="dev">
-          Development
-        </mat-option>
-        <mat-option value="stage">
-          Staging
-        </mat-option>
-        <mat-option value="qa">
-          Quality Assurance
-        </mat-option>
-        <mat-option value="test">
-          Testing
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+      </mat-optgroup>
+    </mat-autocomplete>
+  </mat-form-field>
 
 
-    <mat-form-field appearance="fill">
-      <mat-label>Region</mat-label>
-      <input type="text"
-             matInput
-             [matAutocomplete]="autoGroupRegion"
-             [(ngModel)]="model.region" name = "region"
-             >
-        <mat-autocomplete #autoGroupRegion="matAutocomplete"  [panelWidth]="230">
-          <mat-option *ngFor="let region of shownRegions" [value]="region.code">
-            {{region.name}}
-          </mat-option>
-      </mat-autocomplete>
-    </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Application Name</mat-label>
+    <input matInput [(ngModel)]="model.name" name="name">
+  </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Instace</mat-label>
-      <input matInput [(ngModel)]="model.instance" name = "instance">
-    </mat-form-field>
 
-    
-  </form>
 
+  <mat-form-field appearance="fill">
+    <mat-label>Environment</mat-label>
+    <input type="text" matInput [matAutocomplete]="autoGroupEnvironment" [(ngModel)]="model.environment"
+      name="environment">
+    <mat-autocomplete #autoGroupEnvironment="matAutocomplete" [panelWidth]="230">
+      <mat-option *ngFor="let env of shownEnvs" [value]="env.code">
+        {{env.name}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+
+
+
+  <mat-form-field appearance="fill">
+    <mat-label>Region</mat-label>
+    <input type="text" matInput [matAutocomplete]="autoGroupRegion" [(ngModel)]="model.region" name="region">
+    <mat-autocomplete #autoGroupRegion="matAutocomplete" [panelWidth]="230">
+      <mat-option *ngFor="let region of shownRegions" [value]="region.code">
+        {{region.name}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Instance</mat-label>
+    <input matInput [(ngModel)]="model.instance" name="instance">
+  </mat-form-field>
+
+
+</form>

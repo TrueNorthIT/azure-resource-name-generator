@@ -13,8 +13,12 @@
     <div id="sidebarTitle" fxLayout="flex" fxLayoutAlign="space-between center">
       <h2>Saved Names</h2>
       <div>
-        <button mat-button (click)="copyNames()">Copy All</button>
-        <button mat-button (click)="resetNames()">Clear All</button>
+        <button mat-icon-button (click)="copyNames()" matTooltip="Copy all saved names">
+          <mat-icon>content_copy</mat-icon>
+        </button>
+        <button mat-icon-button (click)="resetNames()" matTooltip="Delete all saved names">
+          <mat-icon>delete</mat-icon>
+        </button>
       </div>
     </div>
     <mat-list>
@@ -52,16 +56,14 @@
         <mat-card fxLayout="flex" fxLayoutAlign="center">
           <h1 *ngIf="resourceData">{{name}}</h1>
 
-          <div fxLayout="column">
-            <button mat-button matTooltip="Save the name to the sidebar" (click)="saveName(name)">
-              <mat-icon>save</mat-icon>
-            </button>
+          <button mat-icon-button matTooltip="Save the name to the sidebar" (click)="saveName(name)">
+            <mat-icon>save</mat-icon>
+          </button>
 
-            <button mat-button matTooltip="Copy the name to the clipboard!"
-              (click)="displayMessage('Coppied to Clipboard!')" [cdkCopyToClipboard]="name">
-              <mat-icon>content_copy</mat-icon>
-            </button>
-          </div>
+          <button mat-icon-button matTooltip="Copy the name to the clipboard!"
+            (click)="displayMessage('Coppied to Clipboard!')" [cdkCopyToClipboard]="name">
+            <mat-icon>content_copy</mat-icon>
+          </button>
 
 
         </mat-card>

@@ -18,7 +18,7 @@ header{
 
 header h1 {
     margin-bottom: 0px;
-    font-size: 64px;
+    font-size: 3rem;
     text-align: center;
 }
 
@@ -36,7 +36,7 @@ header button{
 
 
 #generator h1 { 
-    font-size: 48px;
+    font-size: 2rem;
     text-align: center;
     padding: 0px;
     margin: 0px;
@@ -44,7 +44,7 @@ header button{
 }
 
 mat-card{
-    margin-bottom: 64px;
+    // margin-bottom: 64px;
     margin-left: 1rem;
     margin-right: 1rem;
 }
@@ -64,9 +64,13 @@ mat-drawer{
     padding-bottom: 0px;
 }
 
+.mat-list-base .mat-list-item {
+    font-size: 0.8rem;
+}
 
 @media screen and (max-width: 1000px) {
     #generator h1 {
-        font-size: 32px;
+        font-size: 1.5rem;
     }
 }
+

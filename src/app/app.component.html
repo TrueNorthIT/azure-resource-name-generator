@@ -24,15 +24,15 @@
     <mat-list>
       <aside *ngFor="let name of savedNames; let i = index">
         <mat-list-item fxLayoutAlign="space-between">
-          <p>{{name}}</p>
-          <div>
+          {{ (name.length > 32)? (name | slice:0:32)+'...':(name) }}
+          <span class="buttons">
             <button mat-icon-button (click)=copyName(i)>
               <mat-icon>content_copy</mat-icon>
             </button>
             <button mat-icon-button (click)=removeName($event)>
               <mat-icon>delete</mat-icon>
             </button>
-          </div>
+          </span>
         </mat-list-item>
         <mat-divider></mat-divider>
       </aside>

@@ -54,8 +54,25 @@ mat-drawer-container{
 }
 
 mat-drawer{
-    max-width: 50ch;
+    max-width: 60ch;
+    min-width: 300px;   
     width: 25%;
+}
+
+.buttons .mat-icon-button{
+    width: 1.35rem;
+    height: 1.35rem;
+    line-height: 1.35rem;
+}
+
+.mat-list-item .mat-icon{
+    font-size: 1.3rem;
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
+.buttons{
+    white-space: nowrap;
 }
 
 
@@ -65,8 +82,10 @@ mat-drawer{
 }
 
 .mat-list-base .mat-list-item {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
+
+
 
 @media screen and (max-width: 1000px) {
     #generator h1 {
